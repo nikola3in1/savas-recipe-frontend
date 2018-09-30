@@ -1,6 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router'
 
 
@@ -15,6 +14,9 @@ import { MainComponent } from './_pages/main/main.component';
 import { ErrorComponent } from './_pages/error/error.component';
 import { VideoComponent } from './_components/video/video.component';
 import { SocialsComponent } from './_components/socials/socials.component';
+
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { CacheInterceptor } from './CacheInterceptor';
 
 
 @NgModule({
@@ -32,7 +34,10 @@ import { SocialsComponent } from './_components/socials/socials.component';
     HttpClientModule,
     RouterModule.forRoot(appRoutes)
     ],
-  providers: [ContentService],
+    providers: [
+      ContentService,
+      { provide: HTTP_INTERCEPTORS, useClass: CacheInterceptor, multi: true }
+    ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
