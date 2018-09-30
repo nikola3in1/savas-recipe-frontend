@@ -37,12 +37,12 @@ export class RecipeComponent implements OnInit {
         let val = this.endRef.nativeElement.offsetParent.offsetTop;
         if (val < endVal) {
           //Banning visitor
-          // this.content.banVisitor().subscribe((data) => {
+          this.content.banVisitor().subscribe((data) => {
             //Notfying parent to hide elements
             this.isDone.emit(true);
             timer.unsubscribe();
             // console.log(data, "banned")
-          // })
+          })
 
         }
         console.log("interval")

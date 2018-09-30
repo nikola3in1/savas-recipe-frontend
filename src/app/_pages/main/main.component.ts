@@ -11,7 +11,7 @@ export class MainComponent implements OnInit {
 
   //Secret stuff
   private keys = "";
-  private secret = "asdasdasd";//just_groove_me
+  private secret = "just_groove_me";//just_groove_me
   private isUnlocked = false;
 
   @HostListener('document:keypress', ['$event'])
