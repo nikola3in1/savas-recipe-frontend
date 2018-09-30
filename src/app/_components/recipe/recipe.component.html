@@ -1,0 +1,28 @@
+<div *ngIf="visible">
+	<p #start id="start">...sta danas da spremam?</p>
+	<h1 class="text-center">
+		SAVA SPREMA
+		<sub>Nudle sa piletinom!</sub>
+	</h1>
+	<div id="titles">
+		<div id="titlecontent">
+
+			<p class="center">NUDLE SA PILETINOM<br />PO ORIGINALNOM SAVINOM RECEPTU</p>
+
+			<li *ngFor="let in of ingredients">{{in}}</li>
+			<p *ngFor="let ins of instructions">{{ins}}.</p>
+			<p #end class="center">Prijatno!</p>
+
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<p class="center">U got it?</p>
+			<br>
+			<br>
+			<p class="center">K then, bye!</p>
+
+		</div>
+	</div>
+</div>

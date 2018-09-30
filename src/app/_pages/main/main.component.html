@@ -1,0 +1,18 @@
+<div class="container-fluid" *ngIf="visible">
+
+  <div style="z-index: -1 !important; " *ngIf="isUnlocked">
+    unlocked
+    <app-guitar (isDone)="onSketchDelete($event)"></app-guitar>
+  </div>
+
+  <div style="z-index: -1 !important; opacity: 0.3 !important;">
+    <app-video></app-video>
+  </div>
+
+  <div style="z-index: 2 !important;">
+
+    <app-socials style="position: absolute !important; right: 0px !important; bottom: 10px !important;" class="float-right"></app-socials>
+    <app-recipe (isDone)="hide()" style="background-color: black !important"></app-recipe>
+  </div>
+
+</div>
